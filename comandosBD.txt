@@ -1,0 +1,87 @@
+SHOW DATABASES; 
+create database aula;
+use aula; //sempre apos que crio uma base de dados
+create table alunos(ra varchar(5),nome varchar(20),endereco varchar(30));
+show tables;
+describe alunos;
+create table Meus_contatos(nome char(30),sobrenome char(20),email varchar(50),aniversario date,prifissao varchar(20),estadocivil varchar(20),endereco varchar(30),whats varchar(20));
+alter table Meus_contatos rename to meu_contato;
+alter table aluno add telefone varchar(20) after endereco;
+
+alter table aluno drop telefone;
+insert into aluno(ra,nome,estadocivil,endereco) values ('001', 'Cristiane','casada','rua a');
+select *from aluno;
+insert into aluno values ('005', 'José','casado','rua a');
+
+
+
+use aula2;
+desc aluno;
+alter table aluno add valor_mensalidade decimal(10.2) after telefone;
+desc aluno;
+select *from aluno;
+insert into aluno values(001,'André','rua_w','2345-4567',1200);
+select *from aluno;
+insert into aluno values(002,'Aline','rua_z','2345-3221',1340);
+
+insert into aluno(ra,nome,endereco,telefone,valor_mensalidade) values(001,'André','rua_w','2345-4567',1200);
+
+select *from aluno;
+insert into aluno(ra,nome,endereco,telefone,valor_mensalidade) values ('001','André','rua_w','2345-4567',1200);
+desc aluno;
+insert into aluno values (idaluno,'001','André','rua_w','2345-4567',1200);
+insert into aluno values (idaluno,'006','Marco','rua_9','3733-4747',1556);
+insert into aluno values (idaluno,'007','Milton','rua_9','3733-4747',1556);
+insert into aluno values (idaluno,'008','Miguel','rua_9','3733-4747',1556);
+insert into aluno values (idaluno,'009','Marco','rua_9','3733-4747',1556);
+insert into aluno values (idaluno,'010','Marco','rua_9','3733-4747',1556);
+
+desc aluno;
+
+select *from aluno;
+insert into aluno(ra,nome,endereco,telefone,valor_mensalidade) values ('001','André','rua_w','2345-4567',1200);
+desc aluno;
+insert into aluno values (idaluno,'006','Marco','rua_9','3733-4747',1556);
+desc aluno 
+SELECT ra,nome,endereço,telefone FROM aluno WHERE idaluno=003;
+select *from aluno;
+SELECT nome FROM aluno WHERE valor_mensalidade<>1000;
+SELECT nome FROM aluno order by nome asc;
+SELECT nome FROM aluno order by nome desc;
+SELECT nome,endereço FROM aluno order by valor_mensalidade desc;
+SELECT nome,endereço,valor_mensalidade FROM aluno order by valor_mensalidade desc;
+SELECT ra,nome FROM aluno where nome like '%Marcelo';
+SELECT * FROM aluno where nome like 'A%';
+SELECT * FROM aluno where nome like 'M%';
+SELECT * FROM aluno where nome like 'M%' limit 2;
+
+update aluno set valor_mensalidade=1456 where idaluno=4;
+
+___________________________________________________________________________
+show databases;
+create database aula4;
+use aula4;
+show tables;
+desc cliente;
+alter table new_table rename to Cliente;
+desc contato;
+insert into cliente(Nome,Data_Nascimento,Endereço) values ('André','02/03/1978','rua_A');
+insert into cliente(Nome,Data_Nascimento,Endereço) values ('Leandro','02/12/1974','rua_B');
+insert into cliente(Nome,Data_Nascimento,Endereço) values ('José','05/02/1980','rua_R');
+insert into cliente(Nome,Data_Nascimento,Endereço) values ('Marcelo','22/05/1970','rua_W');
+insert into cliente(Nome,Data_Nascimento,Endereço) values ('Camila','22/08/1975','rua_Z');
+insert into cliente(Nome,Data_Nascimento,Endereço) values ('Marcela','10/11/1981','rua_PP');
+insert into cliente(Nome,Data_Nascimento,Endereço) values ('Andressa','22/08/1970','rua_T');
+insert into contato(Telefone,Email,id_Cliente) values ('2733-4456','andre@gmail.com','1');
+select *from cliente;
+select *from contato;
+insert into contato(Telefone,Email,id_Cliente) values ('2733-44221','leandro@gmail.com','2');
+insert into contato(Telefone,Email,id_Cliente) values ('2733-4434','jose@gmail.com','3');
+insert into contato(Telefone,Email,id_Cliente) values ('2733-4444','marcelo@gmail.com','4');
+insert into contato(Telefone,Email,id_Cliente) values ('2733-4334','camila@gmail.com','5');
+insert into contato(Telefone,Email,id_Cliente) values ('2733-4344','marcela@gmail.com','6');
+insert into contato(Telefone,Email,id_Cliente) values ('2733-7844','andressa@gmail.com','7');
+____________________________________________________________________________
+
+
+
